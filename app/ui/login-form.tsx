@@ -16,14 +16,14 @@ export default function LoginForm() {
 
   return (
     <form action={dispatch} className="space-y-3">
-      <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
+      <div className="flex-1 rounded-lg  bg-gray-50 shadow-lg dark:bg-neutral-700 px-6 pb-4 pt-8">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
-          Please log in to continue.
+          Por favor logue-se para continuar.
         </h1>
         <div className="w-full">
           <div>
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+              className="mb-3 mt-5 block text-xs font-medium text-gray-900 dark:text-white" 
               htmlFor="email"
             >
               Email
@@ -42,10 +42,10 @@ export default function LoginForm() {
           </div>
           <div className="mt-4">
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+              className="mb-3 mt-5 block text-xs font-medium text-gray-900  dark:text-white"
               htmlFor="password"
             >
-              Password
+              Senha
             </label>
             <div className="relative">
               <input
@@ -83,7 +83,12 @@ function LoginButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button className="mt-4 w-full" aria-disabled={pending}>
+    <Button className="mt-4 w-full" aria-disabled={pending}
+    style={{
+      background:
+        "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
+    }}
+    >
       Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
     </Button>
   );
